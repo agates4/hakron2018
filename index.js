@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/help1', (req, res) => {
-    console.log(req)
+    console.log(req.body)
 })
 
 app.listen(80, () => {
