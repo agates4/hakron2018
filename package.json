@@ -23,6 +23,7 @@
   "homepage": "https://github.com/agates4/hakron2018#readme",
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
   }
 }

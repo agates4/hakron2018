@@ -1,11 +1,12 @@
-const express = require('express')
-var app = express();
+import express from 'express';
+const app = express()
 
-app.set("view options", {layout: false});
-app.use(express.static(__dirname + '/views'));
+app.set('view engine', 'pug');
 
-app.get('/', function(req, res) {
-    res.render('index.html');
-});
+app.get('/', (req, res) => {
+    res.render('index')
+})
 
-app.listen(8080, '127.0.0.1')
+app.listen(5656, () => {
+    console.log('http://localhost:5656')
+})
