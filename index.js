@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express()
 
+app.use(express.json());
+
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
@@ -10,6 +12,11 @@ app.get('/', (req, res) => {
 
 app.post('/help1', (req, res) => {
     console.log(req)
+    res.send(
+        {
+            "response": "success"
+        }
+    )
 })
 
 app.listen(80, () => {
