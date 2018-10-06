@@ -3,7 +3,7 @@ var weather = require('openweather-apis');
 weather.setLang('English');
 weather.setCity('Akron');
 weather.setUnits('imperial');
-weather.setAPPID('b9dec2e21bf0037bcc50439b8b70cf19')
+weather.setAPPID('272962de1269f77934c7e7c37e4a915c')
 
 
 const app = express()
