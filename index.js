@@ -1,10 +1,5 @@
 const express = require("express");
 var weather = require('openweather-apis');
-weather.setLang('English');
-weather.setCity('Akron');
-weather.setUnits('imperial');
-weather.setAPPID('272962de1269f77934c7e7c37e4a915c')
-
 
 const app = express()
 
@@ -27,9 +22,15 @@ app.post('/bus', (req, res) => {
 
 app.post('/weather', (req, res) => {
     console.log(req.body)
+    weather.setAPPID('272962de1269f77934c7e7c37e4a915c')
+    weather.setLang('English');
+    weather.setCity('Akron');
+    weather.setUnits('imperial');
+
     weather.getWeatherForecastForDays(3, function(err, obj){
 		console.log(obj);
-	});
+    });
+    
     res.send(
         {
             "response": "weather"
