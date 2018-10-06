@@ -14,7 +14,7 @@ app.post('/bus', (req, res) => {
     console.log(req.body)
     res.send(
         {
-            "response": "success"
+            "response": "bus"
         }
     )
 })
@@ -23,7 +23,7 @@ app.post('/weather', (req, res) => {
     console.log(req.body)
     res.send(
         {
-            "response": "success"
+            "response": "weather"
         }
     )
 })
@@ -32,7 +32,7 @@ app.post('/addiction', (req, res) => {
     console.log(req.body)
     res.send(
         {
-            "response": "success"
+            "response": "addiction"
         }
     )
 })
