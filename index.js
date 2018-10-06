@@ -8,6 +8,6 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.listen(5656, () => {
-    console.log('http://localhost:5656')
+app.listen(80, () => {
+    // console.log('http://localhost:5656')
 })
