@@ -10,7 +10,25 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.post('/help1', (req, res) => {
+app.post('/bus', (req, res) => {
+    console.log(req.body)
+    res.send(
+        {
+            "response": "success"
+        }
+    )
+})
+
+app.post('/weather', (req, res) => {
+    console.log(req.body)
+    res.send(
+        {
+            "response": "success"
+        }
+    )
+})
+
+app.post('/addiction', (req, res) => {
     console.log(req.body)
     res.send(
         {
