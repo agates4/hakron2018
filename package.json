@@ -24,6 +24,7 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "openweather-apis": "^3.3.5",
     "pug": "^2.0.3"
   }
 }
