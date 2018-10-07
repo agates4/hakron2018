@@ -30,16 +30,16 @@ app.post('/weather', (req, res) => {
         else {
             sunrise = data.values.sys.sunrise
             var sunrise = new Date(sunrise*1000);
-            var hours1 = date.getHours();
-            var minutes1 = "0" + date.getMinutes();
-            var seconds1 = "0" + date.getSeconds();
+            var hours1 = sunrise.getHours();
+            var minutes1 = "0" + sunrise.getMinutes();
+            var seconds1 = "0" + sunrise.getSeconds();
             var formattedSunrise = hours1 + ':' + minutes1.substr(-2) + ':' + seconds1.substr(-2);
 
             sunset = data.values.sys.sunset
             var sunset = new Date(sunset*1000);
-            var hours1 = date.getHours();
-            var minutes1 = "0" + date.getMinutes();
-            var seconds1 = "0" + date.getSeconds();
+            var hours1 = sunset.getHours();
+            var minutes1 = "0" + sunset.getMinutes();
+            var seconds1 = "0" + sunset.getSeconds();
             var formattedSunset = hours1 + ':' + minutes1.substr(-2) + ':' + seconds1.substr(-2);
 
             console.log(formattedSunrise, formattedSunset)
