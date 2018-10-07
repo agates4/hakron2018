@@ -24,6 +24,7 @@ app.post('/bus', (req, res) => {
 app.post('/weather', (req, res) => {
     console.log(req.body)
     weather.setAPPID('272962de1269f77934c7e7c37e4a915c')
+    weather.setForecastType("daily");
     weather.setCulture('en')
 
     weather.now("Akron", function(err, data) {	
