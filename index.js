@@ -14,12 +14,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/bus', (req, res) => {
-            const bus = ["Route 101,\n"]
-            const closestTerminal = ["BUS STOP: UA Arts and sciences,\n"]
-            const arrival = ["Arrival: 10 minutes"]
-
+    const bus = ["Route 101,\n"]
+    const closestTerminal = ["BUS STOP: UA Arts and sciences,\n"]
+    const arrival = ["Arrival: 10 minutes"]
     
-    console.log(req.body)
     res.send(
         {
             "response": 
