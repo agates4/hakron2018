@@ -39,9 +39,16 @@ app.post('/weather', (req, res) => {
             sunset.setHours(sunset.getHours() - 4);
             var formattedSunset = dateFormat(sunset, "h:MM TT");
 
-            console.log(formattedSunrise, formattedSunset)
+            console.log(formattedSunrise, formattedSunset, data.values.weather)
         }
     })
+    weather.forecast("Akron", function(err, data) {	
+        if(err) console.log(err);
+        else {
+            console.log(data)
+        }
+    })
+    
     
     res.send(
         {
