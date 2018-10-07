@@ -51,8 +51,8 @@ app.post('/weather', (req, res) => {
     )
 })
 app.post('/addiction', (req, res) => {
-    const placeName = ["Salvation Army,", "Summa Rehab,", "IBH Addiction Recovery Center,"]
-    const hours = ["9am - 7pm,", "Open all day,", "8am - 6pm,"]
+    const placeName = ["#1 Salvation Army,", "#2 Summa Rehab,", "#3 IBH Addiction Recovery Center,"]
+    const hours = ["HOURS: 9am - 7pm,", "Open all day,", "HOURS: 8am - 6pm,"]
     const address = ["1006 Grant St, Akron, OH 44311,", "29 N Adams St, Akron, OH 44304,", "3445 S Main St, Akron, OH 44319," ]
     const distance = ["1.5 miles from current location", "2.2 miles from current location", "5.3 miles from current location"]
 
@@ -62,8 +62,6 @@ app.post('/addiction', (req, res) => {
             placeName[0] + " " + hours[0] + " " + address[0] + " " + distance[0] + "\n" +
             placeName[1] + " " + hours[1] + " " + address[1] + " " + distance[1] + "\n" +
             placeName[2] + " " + hours[2] + " " + address[2] + " " + distance[2] + "\n"  
-
-
     })
 })
 
