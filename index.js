@@ -1,6 +1,7 @@
 const express = require("express");
 var weather = require("openweather-node")
 var dateFormat = require('dateformat');
+var request = require('request');
 
 const app = express()
 
@@ -43,6 +44,16 @@ app.post('/weather', (req, res) => {
             console.log(formattedSunrise, formattedSunset, data.values.weather, data)
         }
     })
+
+    request.post({
+        headers: {'content-type' : 'application/x-www-form-urlencoded'},
+        url:     'http://localhost/test2.php',
+        body:    "mes=heydude"
+    }, function(error, response, body){
+        console.log(body);
+    });
+
+    // http://api.openweathermap.org/data/2.5/forecast?q=Akron&units=imperial&appid=272962de1269f77934c7e7c37e4a915c&cnt=20
     
     res.send(
         {
