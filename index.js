@@ -25,7 +25,7 @@ app.post('/weather', (req, res) => {
     weather.setAPPID('272962de1269f77934c7e7c37e4a915c')
     weather.setCulture('en')
 
-    weather.now(["41.0814", "81.5190"], function(err, aData) {	
+    weather.now("Akron", function(err, aData) {	
         if(err) console.log(err);
         else
         {
