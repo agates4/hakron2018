@@ -23,7 +23,7 @@ app.post('/bus', (req, res) => {
         {
             "response": 
             bus [0] + " " + closestTerminal [0] + " " + arrival[0] + " " + "\n" 
-    )
+    
 })
 
 app.post('/weather', (req, res) => {
