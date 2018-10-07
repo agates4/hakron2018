@@ -71,7 +71,7 @@ app.post('/weather', (req, res) => {
 
                 insertString = ""
                 if(insertDay)
-                    insertString = "\nOn " + currentDay + ":\n"
+                    insertString = "\n\nOn " + currentDay + ":"
 
                 var formattedDate = dateFormat(date, "h:MM TT");
                 formattedResponse += insertString + "\n" + "There will be " + element.weather[0].description + " at " + formattedDate
