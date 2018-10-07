@@ -25,10 +25,24 @@ app.post('/weather', (req, res) => {
     weather.setAPPID('272962de1269f77934c7e7c37e4a915c')
     weather.setCulture('en')
 
-    weather.now("Akron", function(err, aData) {	
+    weather.now("Akron", function(err, data) {	
         if(err) console.log(err);
         else {
-            console.log(aData)
+            sunrise = data.sys.sunrise
+            var sunrise = new Date(sunrise*1000);
+            var hours1 = date.getHours();
+            var minutes1 = "0" + date.getMinutes();
+            var seconds1 = "0" + date.getSeconds();
+            var formattedSunrise = hours1 + ':' + minutes1.substr(-2) + ':' + seconds1.substr(-2);
+
+            sunset = data.sys.sunset
+            var sunset = new Date(sunset*1000);
+            var hours1 = date.getHours();
+            var minutes1 = "0" + date.getMinutes();
+            var seconds1 = "0" + date.getSeconds();
+            var formattedSunset = hours1 + ':' + minutes1.substr(-2) + ':' + seconds1.substr(-2);
+
+            console.log(sunrise, sunset)
         }
     })
     
