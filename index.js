@@ -13,10 +13,16 @@ app.get('/', (req, res) => {
 })
 
 app.post('/bus', (req, res) => {
+            const bus = ["Route 101"]
+            const closestTerminal = ["UA Arts and sciences,"]
+            const arrival = ["Arrival: 10 minutes"]
+
+    
     console.log(req.body)
     res.send(
         {
-            "response": "bus"
+            "response": 
+            bus [0] + " " + closestTerminal [0] + " " + arrival[0] + " " + "\n" +
         }
     )
 })
@@ -50,16 +56,14 @@ app.post('/weather', (req, res) => {
             })
             app.post('/addiction', (req, res) => {
                 request.get({
-                    request.get({
-                        headers: {'zipCode' : 'application/x-www-form-urlencoded'},
-                        url:     'https://www.zipcodeapi.com/rest/GOhazMBKVJ2VDSEOrrkf0sswW4D5c4NYOjZi2mGTjf2wuvgvTkUj5L1KpR2GkRRI/info.json/zip_code/degrees'
-                    }, function(error, response, body){
-                        data = JSON.parse(body)
-            
-                    
-                    })
-                
+                    headers: {'zipCode' : 'application/x-www-form-urlencoded'},
+                    url:     'https://www.zipcodeapi.com/rest/GOhazMBKVJ2VDSEOrrkf0sswW4D5c4NYOjZi2mGTjf2wuvgvTkUj5L1KpR2GkRRI/info.json/zip_code/degrees'
+                }, function(error, response, body){
+                    data = JSON.parse(body)
+
+                    console.log(data)
                 })
+                
                 const placeName = ["#1 Salvation Army,", "#2 Summa Rehab,", "#3 IBH Addiction Recovery Center,"]
                 const hours = ["HOURS: 9am - 7pm,", "Open all day,", "HOURS: 8am - 6pm,"]
                 const address = ["1006 Grant St, Akron, OH,", "29 N Adams St, Akron, OH,", "3445 S Main St, Akron, OH,"]
