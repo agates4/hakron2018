@@ -61,8 +61,16 @@ app.post('/weather', (req, res) => {
     
             currentDay = false
             insertDay = false
+            prevDescription = ""
             for (let index = 0; index < weatherResponse.cnt; index++) {
                 const element = weatherResponse.list[index];
+
+                if(prevDescription != element.weather[0].description) {
+                    prevDescription = element.weather[0].description
+                }
+                else {
+                    continue
+                }
 
                 date = element.dt * 1000
                 var date = new Date(date)
