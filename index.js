@@ -54,14 +54,6 @@ app.post('/weather', (req, res) => {
             })
             })
             app.post('/addiction', (req, res) => {
-                request.get({
-                    headers: {'zipCode' : 'application/x-www-form-urlencoded'},
-                    url:     'https://www.zipcodeapi.com/rest/GOhazMBKVJ2VDSEOrrkf0sswW4D5c4NYOjZi2mGTjf2wuvgvTkUj5L1KpR2GkRRI/info.json/zip_code/degrees'
-                }, function(error, response, body){
-                    data = JSON.parse(body)
-
-                    console.log(data)
-                })
                 
                 const placeName = ["#1 Salvation Army,", "#2 Summa Rehab,", "#3 IBH Addiction Recovery Center,"]
                 const hours = ["HOURS: 9am - 7pm,", "Open all day,", "HOURS: 8am - 6pm,"]
