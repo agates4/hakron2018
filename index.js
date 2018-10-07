@@ -1,6 +1,7 @@
 const express = require("express");
 var weather = require("openweather-node")
 var dateFormat = require('dateformat');
+var request = require('request');
 
 const app = express()
 
