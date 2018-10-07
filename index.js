@@ -51,13 +51,14 @@ app.post('/weather', (req, res) => {
     )
 })
 app.post('/addiction', (req, res) => {
-    const placeName = ["ad1", "ad2", "ad3"]
-    const hours = ["hours1", "hours2", "hours3"]
-    const distance = ["miles1", "miles2", "miles3"]
+    const placeName = ["Salvation Army,", "Summa Rehab,", "IBH Addiction Recovery Center,"]
+    const hours = ["9am - 7pm,", "Open all day,", "8am - 6pm,"]
+    const distance = ["1.5 miles", "2.2 miles", "5.3 miles"]
 
     console.log(req.body)
     res.send({
-        "response": placeName[0] + " " + hours[0] + " " + distance[0] + "\n" +
+        "response": 
+            placeName[0] + " " + hours[0] + " " + distance[0] + "\n" +
             placeName[1] + " " + hours[1] + " " + distance[1] + "\n" +
             placeName[2] + " " + hours[2] + " " + distance[2] + "\n" 
 
