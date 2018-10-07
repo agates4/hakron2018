@@ -14,8 +14,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/bus', (req, res) => {
-            const bus = ["Route 101"]
-            const closestTerminal = ["UA Arts and sciences,"]
+            const bus = ["Route 101,\n"]
+            const closestTerminal = ["BUS STOP: UA Arts and sciences,\n"]
             const arrival = ["Arrival: 10 minutes"]
 
     
