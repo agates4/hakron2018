@@ -28,15 +28,15 @@ app.post('/weather', (req, res) => {
     weather.now("Akron", function(err, data) {	
         if(err) console.log(err);
         else {
-            sunrise = data.values.sys.sunrise + " EST"
-            var sunrise = new Date(sunrise*1000);
+            sunrise = data.values.sys.sunrise * 1000 + " EST"
+            var sunrise = new Date(sunrise);
             var hours1 = sunrise.getHours();
             var minutes1 = "0" + sunrise.getMinutes();
             var seconds1 = "0" + sunrise.getSeconds();
             var formattedSunrise = hours1 + ':' + minutes1.substr(-2)
 
-            sunset = data.values.sys.sunset + " EST"
-            var sunset = new Date(sunset*1000);
+            sunset = data.values.sys.sunset * 1000 + " EST"
+            var sunset = new Date(sunset);
             var hours1 = sunset.getHours();
             var minutes1 = "0" + sunset.getMinutes();
             var seconds1 = "0" + sunset.getSeconds();
