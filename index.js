@@ -24,12 +24,14 @@ app.post('/weather', (req, res) => {
     console.log(req.body)
     weather.setAPPID('272962de1269f77934c7e7c37e4a915c')
     weather.setCulture('en')
-    weather.setZipCode(44223);
-    weather.setUnits('imperial');
 
-    weather.getWeatherForecastForDays(3, function(err, obj){
-		console.log(obj);
-    });
+    weather.now("Akron", function(err, aData) {	
+        if(err) console.log(err);
+        else
+        {
+            console.log(aData)
+        }
+    })
     
     res.send(
         {
