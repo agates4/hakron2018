@@ -26,7 +26,7 @@ app.post('/weather', (req, res) => {
     weather.setCulture('en')
 
     weather.now("Akron", function(err, aData) {	
-        if(err) console.log(err);
+        if(err) console.log(err);``
         else
         {
             console.log(aData)
@@ -39,14 +39,19 @@ app.post('/weather', (req, res) => {
         }
     )
 })
-
 app.post('/addiction', (req, res) => {
+    const placeName = ["ad1", "ad2", "ad3"]
+    const hours = ["hours1", "hours2", "hours3"]
+    const distance = ["miles1", "miles2", "miles3"]
+
     console.log(req.body)
-    res.send(
-        {
-            "response": "addiction"
-        }
-    )
+    res.send({
+        "response": placeName[0] + " " + hours[0] + " " + distance[0] + "\n" +
+            placeName[1] + " " + hours[1] + " " + distance[1] + "\n" +
+            placeName[2] + " " + hours[2] + " " + distance[2] + "\n" 
+
+
+    })
 })
 
 app.listen(80, () => {
