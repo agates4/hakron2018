@@ -53,6 +53,7 @@ app.post('/weather', (req, res) => {
 app.post('/addiction', (req, res) => {
     const placeName = ["Salvation Army,", "Summa Rehab,", "IBH Addiction Recovery Center,"]
     const hours = ["9am - 7pm,", "Open all day,", "8am - 6pm,"]
+    const address = ["1006 Grant St, Akron, OH 44311,", "29 N Adams St, Akron, OH 44304,", "3445 S Main St, Akron, OH 44319," ]
     const distance = ["1.5 miles", "2.2 miles", "5.3 miles"]
 
     console.log(req.body)
@@ -60,7 +61,8 @@ app.post('/addiction', (req, res) => {
         "response": 
             placeName[0] + " " + hours[0] + " " + distance[0] + "\n" +
             placeName[1] + " " + hours[1] + " " + distance[1] + "\n" +
-            placeName[2] + " " + hours[2] + " " + distance[2] + "\n" 
+            placeName[2] + " " + hours[2] + " " + distance[2] + "\n" +
+            placeName[3] + " " + hours[3] + " " + distance[3] + "\n" 
 
 
     })
