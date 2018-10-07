@@ -43,6 +43,10 @@ app.post('/weather', (req, res) => {
             console.log(formattedSunrise, formattedSunset, data.values.weather)
         }
     })
+
+    weather.setAPPID('272962de1269f77934c7e7c37e4a915c')
+    weather.setForecastType("daily");
+    weather.setCulture('en')
     weather.forecast("Akron", function(err, data) {	
         if(err) console.log(err);
         else {
