@@ -33,6 +33,8 @@ app.post('/weather', (req, res) => {
     weather.setForecastType("daily");
     weather.setCulture('en')
 
+    formattedResponse = ""
+
     weather.now("Akron", function(err, data) {	
         if(err) console.log(err);
         else {
@@ -46,11 +48,46 @@ app.post('/weather', (req, res) => {
             sunset.setHours(sunset.getHours() - 4);
             var formattedSunset = dateFormat(sunset, "h:MM TT");
 
+            formattedResponse = "The sun will rise at " + formattedSunrise
+            + " and set at " + formattedSunset + ". "
         }
-    })
 
-    res.send({
-    "response": "weather"
+        request.post({
+            headers: {'content-type' : 'application/x-www-form-urlencoded'},
+            url:     'http://api.openweathermap.org/data/2.5/forecast?q=Akron&units=imperial&appid=272962de1269f77934c7e7c37e4a915c&cnt=20',
+            body:    "mes=heydude"
+        }, function(error, response, body){
+            weatherResponse = JSON.parse(body)
+    
+            currentDay = false
+            insertDay = false
+            for (let index = 0; index < weatherResponse.cnt; index++) {
+                const element = weatherResponse.list[index];
+
+                date = element.dt * 1000
+                var date = new Date(date)
+                date.setHours(date.getHours() - 4);
+
+                compareDay = dateFormat(date, "mmm dd");
+                if(currentDay != compareDay) {
+                    currentDay = dateFormat(date, "mmm dd");
+                    insertDay = true
+                } else insertDay = false
+
+                insertString = ""
+                if(insertDay)
+                    insertString = "On " + currentDay + ":\n"
+
+                var formattedDate = dateFormat(date, "h:MM TT");
+                formattedResponse += insertString + "\n" + "There will be " + element.weather[0].description + " at " + formattedDate
+            }
+
+            res.send(
+                {
+                    "response": formattedResponse
+                }
+            )
+        });
     })
 })
 
