@@ -59,10 +59,10 @@ app.post('/addiction', (req, res) => {
     console.log(req.body)
     res.send({
         "response": 
-            placeName[0] + " " + hours[0] + " " + distance[0] + "\n" +
-            placeName[1] + " " + hours[1] + " " + distance[1] + "\n" +
-            placeName[2] + " " + hours[2] + " " + distance[2] + "\n" +
-            placeName[3] + " " + hours[3] + " " + distance[3] + "\n" 
+            placeName[0] + " " + hours[0] + " " + address[0] + " " + distance[0] + "\n" +
+            placeName[1] + " " + hours[1] + " " + address[1] + " " + distance[1] + "\n" +
+            placeName[2] + " " + hours[2] + " " + address[2] + " " + distance[2] + "\n" +
+            placeName[3] + " " + hours[3] + " " + address[3] + " " + distance[3] + "\n" 
 
 
     })
