@@ -22,8 +22,7 @@ app.post('/bus', (req, res) => {
     res.send(
         {
             "response": 
-            bus [0] + " " + closestTerminal [0] + " " + arrival[0] + " " + "\n" +
-        }
+            bus [0] + " " + closestTerminal [0] + " " + arrival[0] + " " + "\n" 
     )
 })
 
