@@ -1,5 +1,6 @@
 const express = require("express");
 var weather = require("openweather-node")
+var dateFormat = require('dateformat');
 
 const app = express()
 
@@ -31,16 +32,12 @@ app.post('/weather', (req, res) => {
             sunrise = data.values.sys.sunrise * 1000
             var sunrise = new Date(sunrise)
             sunrise.setHours(sunrise.getHours() - 4);
-            var hours1 = sunrise.getHours();
-            var minutes1 = "0" + sunrise.getMinutes();
-            var formattedSunrise = hours1 + ':' + minutes1.substr(-2)
+            var formattedSunrise = dateFormat(sunrise, "h:MM TT");
 
             sunset = data.values.sys.sunset * 1000
             var sunset = new Date(sunset)
             sunset.setHours(sunset.getHours() - 4);
-            var hours2 = sunset.getHours();
-            var minutes2 = "0" + sunset.getMinutes();
-            var formattedSunset = hours2 + ':' + minutes2.substr(-2)
+            var formattedSunset = dateFormat(sunset, "h:MM TT");
 
             console.log(formattedSunrise, formattedSunset)
         }
