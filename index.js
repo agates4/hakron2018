@@ -1,5 +1,5 @@
 const express = require("express");
-var weather = require("Openweather-Node")
+var weather = require("openweather-node")
 
 const app = express()
 
