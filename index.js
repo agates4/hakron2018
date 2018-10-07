@@ -28,7 +28,7 @@ app.post('/weather', (req, res) => {
     weather.now("Akron", function(err, aData) {	
         if(err) console.log(err);
         else {
-            console.log(aData.weather)
+            console.log(aData)
         }
     })
     
